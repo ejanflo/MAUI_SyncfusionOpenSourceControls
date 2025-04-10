@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.TextInputView">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="ContainerType: Filled" FontAttributes="Bold" FontSize="Medium" Padding="0,30,0,0" />
+        <input:SfTextInputLayout Grid.Row="1" 
+                                     HorizontalOptions="Fill"
+                                     HelperText="Enter username"
+                                     Hint="Enter username" 
+                                     ContainerType="Filled"
+                                     ErrorText="Invalid username">
+            <Entry Keyboard="Text" />
+        </input:SfTextInputLayout>
+
+        <Label Grid.Row="2" Text="ContainerType: Outlined" FontAttributes="Bold" FontSize="Medium" Padding="0,30,0,0" />
+        <input:SfTextInputLayout Grid.Row="3" 
+                                     HorizontalOptions="Fill"
+                                     HelperText="Enter username"
+                                     ContainerType="Outlined"
+                                     Hint="Enter username" 
+                                     ContainerBackground="Transparent"
+                                     ErrorText="Invalid username">
+            <Entry Keyboard="Text" />
+        </input:SfTextInputLayout>
+
+        <Label Grid.Row="4" Text="ContainerType: None" FontAttributes="Bold" FontSize="Medium" Padding="0,30,0,0" />
+        <input:SfTextInputLayout Grid.Row="5" 
+                                     HorizontalOptions="Fill"
+                                     HelperText="Enter username"
+                                     ContainerType="None"
+                                     Hint="Enter username" 
+                                     ErrorText="Invalid username">
+            <Entry Keyboard="Text" />
+        </input:SfTextInputLayout>
+    </Grid>
+</ContentView>

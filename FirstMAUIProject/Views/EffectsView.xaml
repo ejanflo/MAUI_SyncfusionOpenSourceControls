@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:Syncfusion.Maui.Toolkit.EffectsView;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.EffectsView">
+    <ScrollView>
+        <Grid Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="Ripple Effects (Click)" FontAttributes="Bold" FontSize="Medium" Margin="0,20,0,8" />
+            <StackLayout Grid.Row="1" Padding="10" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Border Padding="0" Background="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+                    <effects:SfEffectsView TouchDownEffects="Ripple" WidthRequest="{OnIdiom Default='400', Phone='300'}"  HeightRequest="148" RippleAnimationDuration="500">
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#4E54C8" Offset="0.0" />
+                                    <GradientStop Color="#8F94FB" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{OnIdiom Default=100,Phone=3*,Tablet=100}" />
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="user.png" Margin="7" VerticalOptions="Center"
+								   WidthRequest="72" HeightRequest="72" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                                    <Label Text="Ginno Anthony Tey"  TextColor="#FFFFFF" FontFamily="Roboto-Medium"
+                                       Grid.Row="0"  VerticalTextAlignment="Center"
+                                       Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="Application Management Team Lead"  TextColor="#FFFFFF" 
+                                       VerticalTextAlignment="Center" 
+                                       Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="gftey@anflocor.com"  TextColor="#FFFFFF" 
+                                       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="011-253-321"  TextColor="#FFFFFF" 
+                                       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </effects:SfEffectsView>
+                </Border>
+            </StackLayout>
+
+            <Label Grid.Row="2" Text="Highlight Effects (Click)" FontAttributes="Bold" FontSize="Medium" Margin="0,20,0,8" />
+            <StackLayout Grid.Row="3" Padding="10" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Border Padding="3" Background="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+                    <effects:SfEffectsView TouchDownEffects="Highlight" HighlightBackground="#FF0000" WidthRequest="{OnIdiom Default='400', Phone='300'}"  HeightRequest="148" RippleAnimationDuration="500">
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#4E54C8" Offset="0.0" />
+                                    <GradientStop Color="#8F94FB" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{OnIdiom Default=100,Phone=3*,Tablet=100}" />
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="user.png" Margin="7" VerticalOptions="Center"
+						   WidthRequest="72" HeightRequest="72" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                                    <Label Text="Jessy Pimentera"  TextColor="#FFFFFF" FontFamily="Roboto-Medium"
+                               Grid.Row="0"  VerticalTextAlignment="Center"
+                               Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="Applications Development &amp; Support Senior Associate"  TextColor="#FFFFFF" 
+                               VerticalTextAlignment="Center" 
+                               Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="jfpimentera@anflocor.com"  TextColor="#FFFFFF" 
+                               VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="011-253-321"  TextColor="#FFFFFF" 
+                               VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </effects:SfEffectsView>
+                </Border>
+            </StackLayout>
+
+            <Label Grid.Row="4" Text="Scale Effects (Long press)" FontAttributes="Bold" FontSize="Medium" Margin="0,20,0,8" />
+            <StackLayout Grid.Row="5" Padding="10" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Border Padding="3" Background="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+                    <effects:SfEffectsView ScaleFactor="0.85" TouchDownEffects="None" TouchUpEffects="None" LongPressEffects="Scale"  WidthRequest="{OnIdiom Default='400', Phone='300'}" HeightRequest="148">
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#4E54C8" Offset="0.0" />
+                                    <GradientStop Color="#8F94FB" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{OnIdiom Default=100,Phone=3*,Tablet=100}" />
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="user.png" Margin="7" VerticalOptions="Center"
+			   WidthRequest="72" HeightRequest="72" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                                    <Label Text="Ronald Garcia"  TextColor="#FFFFFF" FontFamily="Roboto-Medium"
+                   Grid.Row="0"  VerticalTextAlignment="Center"
+                   Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="Associate (Developer/Analyst)"  TextColor="#FFFFFF" 
+                   VerticalTextAlignment="Center" 
+                   Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="rtgarcia@anflocor.com"  TextColor="#FFFFFF" 
+                   VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="011-253-321"  TextColor="#FFFFFF" 
+                   VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </effects:SfEffectsView>
+                </Border>
+            </StackLayout>
+
+            <Label Grid.Row="6" Text="Selection Effects (Long press)" FontAttributes="Bold" FontSize="Medium" Margin="0,20,0,8" />
+            <StackLayout Grid.Row="7" Padding="10" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Border Padding="3" Background="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+                    <effects:SfEffectsView LongPressEffects="Selection" SelectionBackground="#FF0000"  WidthRequest="{OnIdiom Default='400', Phone='300'}" HeightRequest="148">
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#4E54C8" Offset="0.0" />
+                                    <GradientStop Color="#8F94FB" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{OnIdiom Default=100,Phone=3*,Tablet=100}" />
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="user.png" Margin="7" VerticalOptions="Center"
+   WidthRequest="72" HeightRequest="72" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                                    <Label Text="Cleofin Pardillo"  TextColor="#FFFFFF" FontFamily="Roboto-Medium"
+       Grid.Row="0"  VerticalTextAlignment="Center"
+       Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="Associate (Application Support)"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" 
+       Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="crpardillo@anflocor.com"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="011-253-321"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </effects:SfEffectsView>
+                </Border>
+            </StackLayout>
+
+            <Label Grid.Row="8" Text="Rotation Effects (Click)" FontAttributes="Bold" FontSize="Medium" Margin="0,20,0,8" />
+            <StackLayout Grid.Row="9" Padding="10" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Border Padding="3" Background="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="18" />
+                    </Border.StrokeShape>
+                    <effects:SfEffectsView  TouchDownEffects="Rotation" Angle="180"  WidthRequest="{OnIdiom Default='400', Phone='300'}" HeightRequest="148">
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#4E54C8" Offset="0.0" />
+                                    <GradientStop Color="#8F94FB" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{OnIdiom Default=100,Phone=3*,Tablet=100}" />
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="user.png" Margin="7" VerticalOptions="Center"
+   WidthRequest="72" HeightRequest="72" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Fill">
+                                    <Label Text="El Jan Nerie Alburo"  TextColor="#FFFFFF" FontFamily="Roboto-Medium"
+       Grid.Row="0"  VerticalTextAlignment="Center"
+       Margin="15,0,0,0" FontSize="18" />
+                                    <Label Text="Associate (Developer/Analyst)"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" 
+       Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="emalburo@anflocor.com"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                    <Label Text="011-253-321"  TextColor="#FFFFFF" 
+       VerticalTextAlignment="Center" Margin="15,0,0,0" FontSize="12"/>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </effects:SfEffectsView>
+                </Border>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentView>

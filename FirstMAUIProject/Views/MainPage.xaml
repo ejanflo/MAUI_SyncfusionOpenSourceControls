@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:FirstMAUIProject.Views"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.Toolkit.TabView;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:local="clr-namespace:FirstMAUIProject.ViewModels"
+             x:Class="FirstMAUIProject.MainPage" >
+    <ContentPage.Resources>
+        <Style TargetType="Button" Class="ApproveButton">
+            <Setter Property="BackgroundColor" Value="MediumSeaGreen" />
+        </Style>
+        <Style TargetType="Button" Class="ApproveButtonText">
+            <Setter Property="TextColor" Value="FloralWhite" />
+        </Style>
+
+        <Style TargetType="Button" Class="CancelButton">
+            <Setter Property="BackgroundColor" Value="LightGray" />
+            <Setter Property="TextColor" Value="DarkGrey"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <tabView:SfTabView x:Name="tabView" IndicatorWidthMode="Stretch" TabHeaderPadding="0" TabWidthMode="SizeToContent" TabBarPlacement="Bottom" TabBarHeight="70" IsScrollButtonEnabled="True" ContentTransitionDuration="300" EnableSwiping="False"> 
+            <tabView:SfTabView.Items>
+                
+                <!--#region Text Input -->
+                <tabView:SfTabItem Header="Text Input" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <views:TextInputView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Navigation Drawer -->
+                <tabView:SfTabItem Header="Nav Drawer" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <views:NavigationDrawerView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Carousel -->
+                <tabView:SfTabItem Header="Carousel" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <views:CarouselView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Segmented Control -->
+                <tabView:SfTabItem Header="Segmented" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <views:SegmentedControlView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Chips -->
+                <tabView:SfTabItem Header="Chips" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <views:ChipView />
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Effects -->
+                <tabView:SfTabItem Header="Effects" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <Grid>
+                            <views:EffectsView />
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Shimmer -->
+                <tabView:SfTabItem Header="Shimmer" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <Grid>
+                            <views:ShimmerView />
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Refresh -->
+                <tabView:SfTabItem Header="Refresh" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <Grid>
+                            <views:RefreshView />
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+                <!--#region Charts -->
+                <tabView:SfTabItem Header="Charts" ImageSource="splash.png" ImageTextSpacing="5" FontAttributes="Bold">
+                    <tabView:SfTabItem.Content>
+                        <Grid>
+                            <views:ChartView />
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                </tabView:SfTabItem>
+                <!--#endregion-->
+
+            </tabView:SfTabView.Items>
+        </tabView:SfTabView>
+    </ContentPage.Content>
+
+</ContentPage>

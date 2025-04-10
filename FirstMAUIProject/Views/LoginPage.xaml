@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="FirstMAUIProject">
+    <VerticalStackLayout>
+        <Image Source="dotnet_bot.png" HeightRequest="120" />
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" Padding="20, 50, 20, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Margin="0, 0, 0, 40" FontAttributes="Bold" FontSize="30" Text="FirstMAUIProject" TextColor="DodgerBlue" HorizontalOptions="Center" />
+            <Label Grid.Row="1" Text="Login your account" FontAttributes="Bold" FontSize="16" TextColor="DarkSlateGray" Margin="0, 0, 0, 10" HorizontalOptions="CenterAndExpand" />
+            <BoxView Grid.Row="2" />
+            
+            <!--#region Username -->
+            <input:SfTextInputLayout Grid.Row="3" 
+                                     x:Name="userName" 
+                                     HorizontalOptions="FillAndExpand" 
+                                     Hint="Enter username" 
+                                     ErrorText="Invalid username">
+                <Entry Keyboard="Text" Text="{Binding UserName}" />
+            </input:SfTextInputLayout>
+            <!--#endregion-->
+
+            <!--#region Password -->
+            <input:SfTextInputLayout Grid.Row="4" 
+                                     x:Name="passWord" 
+                                     HorizontalOptions="FillAndExpand" 
+                                     Hint="Enter password" 
+                                     ErrorText="Invalid password">
+                <Entry IsPassword="True" Keyboard="Default"  Text="{Binding PassWord}" />
+            </input:SfTextInputLayout>
+            <!--#endregion-->
+
+            <BoxView Grid.Row="5" />
+
+
+            <ActivityIndicator Grid.Row="6" HeightRequest="80" IsVisible="{Binding isBusy}" IsRunning="{Binding isBusy}" />
+            
+            <Button Grid.Row="7" 
+                    Text="Login" 
+                    BackgroundColor="DodgerBlue" 
+                    TextColor="White"
+                    CornerRadius="20" 
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="Medium"
+                    Command="{Binding LoginCommand}"/>
+
+            <Label Grid.Row="8" Margin="0, 20, 0, 15" Text="or sign with" TextColor="DimGrey" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <HorizontalStackLayout Grid.Row="9" Spacing="40" HorizontalOptions="CenterAndExpand">
+                <Image Source="google.png" HeightRequest="30" WidthRequest="30" Aspect="AspectFit" />
+                <Image Source="facebook.png" HeightRequest="35" WidthRequest="35" Aspect="AspectFit" />
+                <Image Source="linkedin.png" HeightRequest="35" WidthRequest="35" Aspect="AspectFit" />
+                <Image Source="twitter.png" HeightRequest="35" WidthRequest="35" Aspect="AspectFit" />
+            </HorizontalStackLayout>
+
+            <Label Grid.Row="10" Margin="0, 35, 0, 3" Text="Forgot Password?" HorizontalOptions="CenterAndExpand" />
+            <Button Grid.Row="11" CornerRadius="20" Text="Don't have an account? Sign up"  BackgroundColor="White" TextColor="DarkCyan" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

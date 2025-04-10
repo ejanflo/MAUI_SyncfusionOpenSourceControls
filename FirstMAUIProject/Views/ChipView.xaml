@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chips="clr-namespace:Syncfusion.Maui.Toolkit.Chips;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.ChipView">
+    <Grid Padding="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Choose an electronic item (Choice Type)" TextColor="Black" FontSize="Large" FontAttributes="Bold" />
+        <chips:SfChipGroup Grid.Row="1" ChipType="Choice">
+            <chips:SfChipGroup.Items>
+                <chips:SfChip Text="Washer" />
+                <chips:SfChip Text="Television" />
+                <chips:SfChip Text="Refrigerator" />
+                <chips:SfChip Text="Air Conditioner" />
+            </chips:SfChipGroup.Items>
+        </chips:SfChipGroup>
+
+        <Label Grid.Row="2" Text="Enter brand names (Filter Type)" FontSize="Large" FontAttributes="Bold" Margin="0,30,0,0" />
+        <chips:SfChipGroup Grid.Row="3" ChipType="Input" >
+            <chips:SfChipGroup.InputView>
+                <Entry x:Name="entry"
+			           VerticalOptions="Center" HeightRequest="40"
+			           FontSize="15" 
+			           WidthRequest="110"  />
+            </chips:SfChipGroup.InputView>
+        </chips:SfChipGroup>
+
+        <Label Grid.Row="4" Text="Filter by looks (Filter Type)" TextColor="Black" FontSize="Large" FontAttributes="Bold" Margin="0,30,0,0" />
+        <chips:SfChipGroup Grid.Row="5" ChipType="Filter">
+            <chips:SfChipGroup.Items>
+                <chips:SfChip Text="Classic" ShowCloseButton="True" />
+                <chips:SfChip Text="Modern" ShowCloseButton="True" />
+                <chips:SfChip Text="Minimalist" ShowCloseButton="True" />
+            </chips:SfChipGroup.Items>
+        </chips:SfChipGroup>
+
+        <Label Grid.Row="6" Text="Select Result (Action Type)" TextColor="Black" FontSize="Large" FontAttributes="Bold" Margin="0,30,0,0" />
+        <chips:SfChipGroup Grid.Row="7" ChipType="Action" Command="{ Binding ActionCommand }">
+            <chips:SfChipGroup.Items>
+                <chips:SfChip Text="Search by brands" />
+                <chips:SfChip Text="Search by features" />
+            </chips:SfChipGroup.Items>
+        </chips:SfChipGroup>
+
+        <Border Grid.Row="8" BackgroundColor="LightGray" HeightRequest="300" Margin="0,20,0,0" Padding="20">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Grid RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Text="Search Results" TextColor="Black" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+                <Label Grid.Row="1" Text="{Binding Result}" TextColor="DarkSlateGrey" FontSize="Medium" />
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

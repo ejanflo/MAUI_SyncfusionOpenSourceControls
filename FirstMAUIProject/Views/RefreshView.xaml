@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:refresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.RefreshView">
+    <refresh:SfPullToRefresh x:Name="pullToRefresh">
+        <refresh:SfPullToRefresh.PullableContent>
+            <VerticalStackLayout Padding="30">
+                <Label VerticalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" Text="Pull to Refresh" />
+                <Border BackgroundColor="LightGray" HeightRequest="300" Margin="0,20,0,0" Padding="20">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Grid RowDefinitions="Auto">
+                        <Label x:Name="refreshLabel" Grid.Row="0" Text="Random text will be generated here after refresh" TextColor="Black" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </refresh:SfPullToRefresh.PullableContent>
+    </refresh:SfPullToRefresh>
+</ContentView>

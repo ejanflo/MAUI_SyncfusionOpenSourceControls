@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:segment="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.SegmentedControlView">
+    <Grid Padding="30,0,30,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="ASICS: GEL-NIMBUS 26 MEN" FontSize="Large" Padding="40" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        <Image Grid.Row="1" Source="shoes.jpg" HorizontalOptions="Center" />
+        <Label Grid.Row="2" Text="Sizes Available:" FontSize="Medium" FontAttributes="Bold" Margin="0,10,0,10"/>
+        <segment:SfSegmentedControl Grid.Row="3" SelectedIndex="0" x:Name="segmentedControl" HorizontalOptions="Center" SelectionChanged="segmentedControl_SelectionChanged">
+            <segment:SfSegmentedControl.SelectionIndicatorSettings>
+                <segment:SelectionIndicatorSettings SelectionIndicatorPlacement="Fill" StrokeThickness="5" />
+            </segment:SfSegmentedControl.SelectionIndicatorSettings>
+            <segment:SfSegmentedControl.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>43</x:String>
+                    <x:String>44</x:String>
+                    <x:String>45</x:String>
+                </x:Array>
+            </segment:SfSegmentedControl.ItemsSource>
+        </segment:SfSegmentedControl>
+        <Label Grid.Row="4" Text="Price:" FontAttributes="Bold" TextColor="Black" FontSize="Medium" Margin="0,25,0,0" />
+        <Label Grid.Row="5" x:Name="priceLabel" FontAttributes="Bold" TextColor="DarkOrange" FontSize="Medium" Margin="20,10,0,0" />
+    </Grid>
+</ContentView>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FirstMAUIProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FirstMAUIProject"
+    xmlns:navDrawer="clr-namespace:Syncfusion.Maui.Toolkit.NavigationDrawer;assembly=Syncfusion.Maui.Toolkit"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True"
+    Shell.TabBarTitleColor="ForestGreen"
+    Shell.TabBarForegroundColor="ForestGreen"
+    Shell.TitleColor="White"
+    Shell.BackgroundColor="ForestGreen">
+    
+    <ShellContent
+        Title="Anfloverse"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"
+        Icon="dotnet_bot.png" />
+
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Anfloverse"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+            Icon="dotnet_bot.png" />
+        <ShellContent
+            Title="Approved"
+            ContentTemplate="{DataTemplate local:CustomerPage}"
+            Route="Customer"
+            Icon="dotnet_bot.png" />
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="Settings"
+            Icon="dotnet_bot.png" />
+    </FlyoutItem>
+
+    <Shell.BindingContext>
+        <local:ItemViewModel />
+    </Shell.BindingContext>
+
+    --><!--Menu Header--><!--
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Border HeightRequest="60" 
+                    WidthRequest="60"
+                    StrokeShape="RoundRectangle 80,80,80,80"
+                    HorizontalOptions="Start"
+                    
+                    StrokeThickness="1"
+                    Margin="15,15,0,0">
+
+                <Image
+                    Aspect="AspectFit"
+                    Source="dotnet_bot.png"
+                    SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                  
+                    HeightRequest="160"
+                    WidthRequest="160"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+            </Border>
+            <Label Text="El Jan Nerie Alburo"
+                   FontFamily="RobotoSemibold"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   Margin="15, 5, 0, 0" />
+            <Label Text="Anflo Management and Investment Corporation"
+                   FontFamily="RobotoRegular"
+                   FontSize="14"
+                   HorizontalTextAlignment="Start"
+                   Margin="15, 1, 15, 0" />
+            <Label Text="SSC-IT"
+                   FontFamily="RobotoRegular"
+                   FontAttributes="Italic"
+                   FontSize="12"
+                   HorizontalTextAlignment="Start"
+                   Margin="15, 1, 0, 15" />
+            <Border />
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    --><!--Menu Content--><!--
+    <Shell.FlyoutContent>
+        <VerticalStackLayout>
+            <ListView ItemsSource="{Binding Items}" VerticalScrollBarVisibility="Never" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout Padding="10">
+                                <Image Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50"/>
+                                <Label Text="{Binding Description}" />
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </Shell.FlyoutContent>
+    
+    --><!--Menu Footer--><!--
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <Image Source="dotnet_bot.png" WidthRequest="100" />
+            <Label Text="©Sample App 2025"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="10" 
+                   Margin="0, 0, 0, 15"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".30*, .70*" RowDefinitions="*, *" ColumnSpacing="10">
+                <HorizontalStackLayout Grid.Row="0" Spacing="10" Margin="15, 0, 0, 0">
+                    <Image Source="{Binding FlyoutIcon}" WidthRequest="50" HeightRequest="50"/>
+                    <Label Text="{Binding Title}" VerticalTextAlignment="Center" />
+                </HorizontalStackLayout>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+</Shell>

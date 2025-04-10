@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:carousel="clr-namespace:Syncfusion.Maui.Toolkit.Carousel;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="FirstMAUIProject.Views.CarouselView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="itemTemplate">
+                <Image Source="{Binding Image}" 
+                Aspect="AspectFit"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="ViewMode: Default" FontSize="Medium" FontAttributes="Bold" Margin="0,20,0,0" />
+        <carousel:SfCarousel Grid.Row="1" 
+                         ItemTemplate="{StaticResource itemTemplate}" 
+                         ItemsSource="{Binding ImageCollection}"
+                         ItemHeight="170" ItemWidth="270"
+                         ViewMode="Default"/>
+
+        <Label Grid.Row="2" Text="ViewMode: Linear" FontSize="Medium" FontAttributes="Bold" Margin="0,50,0,0" />
+        <carousel:SfCarousel Grid.Row="3"
+                         ItemTemplate="{StaticResource itemTemplate}" 
+                         ItemsSource="{Binding ImageCollection}"
+                         ItemHeight="170" ItemWidth="270"
+                         ViewMode="Linear"/>
+    </Grid>
+</ContentView>
