@@ -4,7 +4,7 @@
              xmlns:shimmer="clr-namespace:Syncfusion.Maui.Toolkit.Shimmer;assembly=Syncfusion.Maui.Toolkit"
              x:Class="FirstMAUIProject.Views.ShimmerView">
     <Grid VerticalOptions="Center" Padding="30">
-        <shimmer:SfShimmer>
+        <shimmer:SfShimmer IsActive="{Binding IsLoading}">
             <shimmer:SfShimmer.CustomView>
                 <Grid
                     Padding="10"
@@ -132,6 +132,24 @@
                             WidthRequest="175" />
                 </Grid>
             </shimmer:SfShimmer.CustomView>
+            
+            <!-- Real ListView Content -->
+            <ListView 
+            ItemsSource="{Binding Contacts}"
+            IsVisible="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" BackgroundColor="#F9F9F9">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Email}" FontSize="14" TextColor="Gray" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </shimmer:SfShimmer>
     </Grid>
 </ContentView>
